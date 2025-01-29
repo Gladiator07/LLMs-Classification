@@ -1,0 +1,16 @@
+python train.py \
+    --wandb_project "LLMs as classifiers" \
+    --wandb_run_name "qwen2.5_0.5B_qlora" \
+    --model_id "Qwen/Qwen2.5-0.5B" \
+    --model_dtype "bfloat16" \
+    --attention_implementation "flash_attention_2" \
+    --quantize_to_4bit True \
+    --max_seq_length 512 \
+    --learning_rate 1.0e-4 \
+    --batch_size 32 \
+    --num_epochs 3 \
+    --gradient_accumulation_steps 1 \
+    --lora_r 64 \
+    --lora_alpha 64 \
+    --lora_dropout 0.05 \
+    --debug False
